@@ -1,6 +1,5 @@
 using api.Controllers;
 using api.Infrastructure;
-using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 
 namespace test;
