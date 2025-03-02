@@ -4,6 +4,7 @@ namespace api.Infrastructure
 {
     public class ApplicationDbContext : IApplicationDbService
     {
+        // Using HashSet to avoid duplicate entries
         private readonly Dictionary<string, HashSet<string>> _synonymDict = [];
 
         public List<string> GetSynonyms(string word)
@@ -30,6 +31,7 @@ namespace api.Infrastructure
 
         public void AddSynonym(string word, string synonym)
         {
+            // Add the word and synonym in both directions for quick lookup
             AddToDictionary(word, synonym);
             AddToDictionary(synonym, word);
         }

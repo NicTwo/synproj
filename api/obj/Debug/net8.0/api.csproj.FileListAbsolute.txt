@@ -17,6 +17,7 @@ C:\Code\synproj\api\obj\Debug\net8.0\api.AssemblyInfo.cs
 C:\Code\synproj\api\obj\Debug\net8.0\api.csproj.CoreCompileInputs.cache
 C:\Code\synproj\api\obj\Debug\net8.0\api.MvcApplicationPartsAssemblyInfo.cs
 C:\Code\synproj\api\obj\Debug\net8.0\api.MvcApplicationPartsAssemblyInfo.cache
+C:\Code\synproj\api\obj\Debug\net8.0\api.sourcelink.json
 C:\Code\synproj\api\obj\Debug\net8.0\staticwebassets.build.json
 C:\Code\synproj\api\obj\Debug\net8.0\staticwebassets.development.json
 C:\Code\synproj\api\obj\Debug\net8.0\staticwebassets\msbuild.api.Microsoft.AspNetCore.StaticWebAssets.props

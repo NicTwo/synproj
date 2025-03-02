@@ -1,14 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using api.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api.Controllers
 {
-    [Route("api/synonym")]
     [ApiController]
+    [Route("api/synonym")]
     public class SynonymController(IApplicationDbService dbContext) : ControllerBase
     {
         private readonly IApplicationDbService _dbContext = dbContext;
