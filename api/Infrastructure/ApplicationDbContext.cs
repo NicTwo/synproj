@@ -10,12 +10,12 @@ namespace api.Infrastructure
         public List<string> GetSynonyms(string word)
         {
             HashSet<string> synonymSet = [];
-            GetSynonymRecursive(word, ref synonymSet);
+            GetSynonymRecursive(word, synonymSet);
             synonymSet.Remove(word);
             return [.. synonymSet];
         }
 
-        private void GetSynonymRecursive(string word, ref HashSet<string> synonymSet)
+        private void GetSynonymRecursive(string word, HashSet<string> synonymSet)
         {
             if (_synonymDict.TryGetValue(word, out var synonymList))
             {
@@ -23,7 +23,7 @@ namespace api.Infrastructure
                 {
                     if (synonymSet.Add(synonym))
                     {
-                        GetSynonymRecursive(synonym, ref synonymSet);
+                        GetSynonymRecursive(synonym, synonymSet);
                     }
                 }
             }
@@ -46,12 +46,15 @@ namespace api.Infrastructure
             _synonymDict[word].Add(synonym);
         }
 
-        public IEnumerable<string> GetAllSynonyms()
+        public List<string> GetAllSynonyms()
         {
+            List<string> resultList = [];
             foreach (var word in _synonymDict.Keys)
             {
-                yield return CreateSynonymSummary(word, _synonymDict[word]);
+                resultList.Add(CreateSynonymSummary(word, _synonymDict[word]));
             }
+
+            return resultList;
         }
 
         private static string CreateSynonymSummary(string word, HashSet<string> synonymList)

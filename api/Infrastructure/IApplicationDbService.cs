@@ -4,6 +4,6 @@ namespace api.Infrastructure
     {
         public List<string> GetSynonyms(string word);
         public void AddSynonym(string word, string synonym);
-        public IEnumerable<string> GetAllSynonyms();  
+        public List<string> GetAllSynonyms();
     }
 }

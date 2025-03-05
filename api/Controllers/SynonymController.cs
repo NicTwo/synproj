@@ -14,7 +14,7 @@ namespace api.Controllers
         {
             var synonyms = _dbContext.GetSynonyms(word);
 
-            if (synonyms == null || synonyms.Count == 0)
+            if (synonyms == null || synonyms.Count() == 0)
             {
                 return NotFound();
             }
