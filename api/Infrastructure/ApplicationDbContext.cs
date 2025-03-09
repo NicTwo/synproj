@@ -70,5 +70,10 @@ namespace api.Infrastructure
 
             return result.ToString().TrimEnd();
         }
+
+        public void ClearAllSynonyms()
+        {
+            _synonymDict.Clear();
+        }
     }
 }

@@ -9,6 +9,12 @@ namespace api.Controllers
     {
         private readonly IApplicationDbService _dbContext = dbContext;
 
+        [HttpPut]
+        public void AddSynonym(string word, string synonym)
+        {
+            _dbContext.AddSynonym(word, synonym);
+        }
+
         [HttpGet]
         public IActionResult GetSynonym(string word)
         {
@@ -27,11 +33,11 @@ namespace api.Controllers
         {
             return Ok(_dbContext.GetAllSynonyms());
         }
-
-        [HttpPut]
-        public void AddSynonym(string word, string synonym)
+        
+        [HttpDelete]
+        public void ClearAllSynonyms()
         {
-            _dbContext.AddSynonym(word, synonym);
+            _dbContext.ClearAllSynonyms();
         }
     }
 }
